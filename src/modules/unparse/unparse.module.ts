@@ -6,6 +6,6 @@ import { unparseHandler } from './unparse.service';
 const composer = new Composer<Context>();
 const filtered = composer.chatType('private');
 
-filtered.on('message:text', handleLogMiddleware('unparse'), unparseHandler);
+filtered.on(['message:text', 'message:caption'], handleLogMiddleware('unparse'), unparseHandler);
 
 export { composer as unparseModule };
