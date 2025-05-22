@@ -1,0 +1,33 @@
+{
+  "name": "unparse-tg-bot",
+  "module": "src/main.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy --minify",
+    "cf-typegen": "wrangler types --env-interface CloudflareBindings",
+    "format": "biome format --write .",
+    "check-types": "turbo run check-types",
+    "check": "biome check .",
+    "check:write": "biome check --write ."
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@grammyjs/types": "^3.20.0",
+    "@types/node": "^22.15.18",
+    "tsx": "^4.19.4",
+    "wrangler": "^4.15.2"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@cloudflare/workers-types": "^4.20250515.0",
+    "@grammyjs/hydrate": "^1.4.1",
+    "@grammyjs/parse-mode": "^1.11.1",
+    "dotenv": "^16.5.0",
+    "grammy": "^1.36.1",
+    "zod": "^3.24.4"
+  },
+  "packageManager": "pnpm@10.4.1"
+}

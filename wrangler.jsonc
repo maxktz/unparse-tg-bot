@@ -1,0 +1,32 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "unparse-tg-bot",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-05-08",
+  "compatibility_flags": ["nodejs_compat"],
+
+  // enable logs
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  },
+
+  // declare needed variables (not secrets)
+  "env": {
+    "development": {
+      "vars": {
+        "ENVIRONMENT": "development"
+      }
+    },
+    "staging": {
+      "vars": {
+        "ENVIRONMENT": "staging"
+      }
+    },
+    "production": {
+      "vars": {
+        "ENVIRONMENT": "production"
+      }
+    }
+  }
+}
